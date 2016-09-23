@@ -2,7 +2,7 @@ package main
 
 import (
 	log "github.com/Sirupsen/logrus"
-	_ "github.com/xtraclabs/cqrs-sample-pub/sampledomain"
+	_ "github.com/xtraclabs/es-atom-feed-data"
 	dp "github.com/xtracdev/es-data-pub"
 )
 

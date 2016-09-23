@@ -1,0 +1,12 @@
+containerbin:
+	go get github.com/rjeczalik/pkgconfig/cmd/pkg-config
+	go get github.com/mattn/go-oci8
+	go get github.com/Sirupsen/logrus
+	go get github.com/golang/protobuf/proto
+	go get github.com/xtraclabs/appreg
+	go get github.com/xtracdev/goes
+	go get github.com/xtracdev/orapub
+	go get github.com/xtracdev/es-data-pub
+	go get github.com/xtraclabs/es-atom-feed-data
+	go build -o datapub
+

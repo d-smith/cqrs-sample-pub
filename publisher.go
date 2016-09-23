@@ -1,4 +1,4 @@
-package sampledomain
+package main
 
 import (
 	"database/sql"

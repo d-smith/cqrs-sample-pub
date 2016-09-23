@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"time"
 	"strings"
-	"github.com/xtraclabs/cqrs-sample-pub/sampledomain"
 	"fmt"
+	"github.com/xtraclabs/appreg/domain"
 )
 
 var user, password, dbhost, dbPort, dbSvc string
@@ -74,7 +74,7 @@ func main() {
 
 	for i := 0; i < numAggregates; i++ {
 
-		app, _ := sampledomain.NewApplicationReg(fmt.Sprintf("app %d", i), "app desc")
+		app, _ := domain.NewApplicationReg(fmt.Sprintf("app %d", i), "app desc")
 
 		err = app.Store(eventStore)
 		if err != nil {
