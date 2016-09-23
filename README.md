@@ -3,7 +3,7 @@
 This project shows how to update a CQRS read side table as events
 in a domain are published from an event store.
 
-To run this you need a database set up with the [oraeventstore]()
+To run this you need a database set up with the [oraeventstore](https://github.com/xtracdev/oraeventstore)
 schema, plus the following:
 
 <pre>
