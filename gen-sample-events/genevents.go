@@ -9,6 +9,8 @@ import (
 	"strings"
 	"fmt"
 	"github.com/xtraclabs/appreg/domain"
+	"database/sql"
+	_ "github.com/mattn/go-oci8"
 )
 
 var user, password, dbhost, dbPort, dbSvc string
@@ -67,7 +69,19 @@ func main() {
 
 	os.Setenv("ES_PUBLISH_EVENTS", "1")
 
-	eventStore, err := oraeventstore.NewOraEventStore(user, password, dbSvc, dbhost, dbPort)
+	var connectStr = fmt.Sprintf("%s/%s@//%s:%s/%s", user, password, dbhost, dbPort, dbSvc)
+	db, err := sql.Open("oci8", connectStr)
+	if err != nil {
+		log.Fatalf("Error connecting to oracle: %s", err.Error())
+	}
+
+	//Are we really in an ok state for starters?
+	err = db.Ping()
+	if err != nil {
+		log.Fatalf("Error connecting to oracle: %s", err.Error())
+	}
+
+	eventStore, err := oraeventstore.NewOraEventStore(db)
 	if err != nil {
 		log.Fatalf("Error connecting to oracle: %s", err.Error())
 	}
