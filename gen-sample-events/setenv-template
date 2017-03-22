@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Source this via . setenv
+
+export DB_USER=
+export DB_PASSWORD=
+export DB_HOST=
+export DB_PORT=
+export DB_SVC=
+
