@@ -1,0 +1,7 @@
+containerbin:
+	export PKG_CONFIG_PATH=$(GOPATH)/src/github.com/xtraclabs/cqrs-sample-pub/pkgconfig/
+	go get github.com/rjeczalik/pkgconfig/cmd/pkg-config
+	go get github.com/mattn/go-oci8
+	go get github.com/xtracdev/oraeventstore
+	go get github.com/xtraclabs/appreg/domain
+	go build -o genevents
