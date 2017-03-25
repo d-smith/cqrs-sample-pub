@@ -1,101 +1,45 @@
 {
-    "family": "", 
-    "taskRoleArn": "", 
-    "networkMode": "", 
+    "family": "genevents",
     "containerDefinitions": [
         {
-            "name": "", 
-            "image": "", 
-            "cpu": 0, 
-            "memory": 0, 
-            "memoryReservation": 0, 
-            "links": [
-                ""
-            ], 
-            "portMappings": [
-                {
-                    "containerPort": 0, 
-                    "hostPort": 0, 
-                    "protocol": ""
-                }
-            ], 
+            "name": "genevents", 
+            "image": "xtracdev/genevents", 
+            "cpu": 128 , 
+            "memory": 128, 
             "essential": true, 
-            "entryPoint": [
-                ""
-            ], 
             "command": [
-                ""
-            ], 
+                "48",
+                "100"
+            ],
             "environment": [
                 {
-                    "name": "", 
-                    "value": ""
-                }
-            ], 
-            "mountPoints": [
+                    "name": "DB_USER", 
+                    "value": "xxx"
+                },
+		        {
+                    "name": "DB_PASSWORD", 
+                    "value": "xxx"
+                },
                 {
-                    "sourceVolume": "", 
-                    "containerPath": "", 
-                    "readOnly": true
-                }
-            ], 
-            "volumesFrom": [
+                    "name": "DB_HOST", 
+                    "value": "xxx"
+                },
                 {
-                    "sourceContainer": "", 
-                    "readOnly": true
-                }
-            ], 
-            "hostname": "", 
-            "user": "", 
-            "workingDirectory": "", 
-            "disableNetworking": true, 
-            "privileged": true, 
-            "readonlyRootFilesystem": true, 
-            "dnsServers": [
-                ""
-            ], 
-            "dnsSearchDomains": [
-                ""
-            ], 
-            "extraHosts": [
+                    "name": "DB_PORT", 
+                    "value": "xxx"
+                },
                 {
-                    "hostname": "", 
-                    "ipAddress": ""
+                    "name": "DB_SVC", 
+                    "value": "xxx"
                 }
-            ], 
-            "dockerSecurityOptions": [
-                ""
-            ], 
-            "dockerLabels": {
-                "KeyName": ""
-            }, 
-            "ulimits": [
-                {
-                    "name": "", 
-                    "softLimit": 0, 
-                    "hardLimit": 0
-                }
-            ], 
+            ],
             "logConfiguration": {
-                "logDriver": "", 
+                "logDriver": "awslogs", 
                 "options": {
-                    "KeyName": ""
+                    "awslogs-group": "ECSLogGroup-atompub",
+                    "awslogs-region":"us-west-1"
                 }
             }
-        }
-    ], 
-    "volumes": [
-        {
-            "name": "", 
-            "host": {
-                "sourcePath": ""
-            }
-        }
-    ], 
-    "placementConstraints": [
-        {
-            "type": "", 
-            "expression": ""
         }
     ]
 }
