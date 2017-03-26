@@ -1,5 +1,7 @@
 # Note on Sample Event Generation
 
+## Event Generation via ECS Task
+
 When hosting an event store in AWS, it can be useful for testing and 
 demonstration purposes to create some sample events. In a typical 
 AWS set up, the RDS instance is in a private subnet with no public
@@ -37,3 +39,13 @@ command.
 <pre>
 aws ecs describe-tasks --cluster DemoCluster --tasks arn:aws:ecs:us-west-1:nnnnnnnn:task/69b799b1-5c3c-4464-a93e-765f23189bd9
 </pre>
+
+### Task Definition Parmeters
+
+To create a task definition, start with task-def-skeleton and customize
+the settings in the definition.
+
+* Update the image definition to pull from the correct repository if 
+you do not want to pull from docker hub
+* Set the database related properties as appropriate to your environment
+* Ensure the logging configuration matches your environment
