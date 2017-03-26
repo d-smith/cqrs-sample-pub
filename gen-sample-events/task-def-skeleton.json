@@ -1,0 +1,45 @@
+{
+    "family": "genevents",
+    "containerDefinitions": [
+        {
+            "name": "genevents", 
+            "image": "xtracdev/genevents", 
+            "cpu": 128 , 
+            "memory": 128, 
+            "essential": true, 
+            "command": [
+                "48",
+                "100"
+            ],
+            "environment": [
+                {
+                    "name": "DB_USER", 
+                    "value": "xxx"
+                },
+		        {
+                    "name": "DB_PASSWORD", 
+                    "value": "xxx"
+                },
+                {
+                    "name": "DB_HOST", 
+                    "value": "xxx"
+                },
+                {
+                    "name": "DB_PORT", 
+                    "value": "xxx"
+                },
+                {
+                    "name": "DB_SVC", 
+                    "value": "xxx"
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "awslogs", 
+                "options": {
+                    "awslogs-group": "ECSLogGroup-atompub",
+                    "awslogs-region":"us-west-1"
+                }
+            }
+        }
+    ]
+}
